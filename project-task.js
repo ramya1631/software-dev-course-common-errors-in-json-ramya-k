@@ -47,24 +47,24 @@ but it contains multiple syntax errors that prevent it from being parsed.
 const invalidBookingJSON = `
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "checkInDate": "2024-05-15",//comma is missing.It is needed to separate another key-value pairs.
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
+      "name": "Alice Johnson",//name is enclosed with double quotes because it is a key value.
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": null,//instead of undefined it should be null or any numeric value
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": ["WiFi", "Breakfast", "Parking"]//Removed comma after "Parking". Trailing commas are not allowed after the last element in the array.
   }
 }
 `;
@@ -91,11 +91,14 @@ const invalidBookingJSON = `
 💬 Reflect and answer the following:
 
 1️⃣ What tools or techniques did you use to identify the errors?
-
+I have used intellj editor to identify errors.
 2️⃣ How did you confirm that your corrected JSON file was valid?
-
+I have used code Beautify tool to validate the JSON file.
 3️⃣ Which errors were the most difficult to spot? Why?
-
+I can easily spot the errors using intellj and code beautify because the given json is simple.
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
+   To avoid these kinds of Errors in the future,I can use code editors like intellj,vscode that detect errors in real-time with error highlighting.
+   using online validator tools like jsonlint,code-beautify can help catch mistakes early.
+
    (e.g., syntax highlighting, linters, writing JSON by example)
 */
